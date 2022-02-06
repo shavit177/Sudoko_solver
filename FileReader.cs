@@ -9,9 +9,10 @@ namespace Sudoko_solver
     {
         public string readData()
         {
+            // Read the file as one string.
             Console.WriteLine("please enter valid file name- ");
             string filename = Console.ReadLine();
-            // Read the file as one string.
+
             string text = System.IO.File.ReadAllText(@validatingFileName(filename));
             return text;
         }

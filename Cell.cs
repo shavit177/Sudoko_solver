@@ -19,6 +19,14 @@ namespace Sudoko_solver
         public string posValue;//to list down possible values it can hold
         //public int quarter;    //to know which quarter the array belongs
         //public string rem;     //remarks columns
+        public Cell(Cell c)
+        {
+            value = c.value;
+            isSource = c.isSource;
+            posValue = (string)c.posValue.Clone();
+            colI = c.colI;
+            rowI = c.rowI;
+        }
         public Cell(char value, int row, int col) 
         {// init cell with source values
             this.value = value;
@@ -37,7 +45,14 @@ namespace Sudoko_solver
             colI = col;
             rowI = row;
         }
-
+        public void lockCell()
+        {
+            this.isLocked = true;
+        }
+        public void unLockCell()
+        {
+            this.isLocked = false;
+        }
         public override string ToString()
         {
             return Convert.ToString(this.value);

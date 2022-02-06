@@ -8,6 +8,7 @@ namespace Sudoko_solver
     {
         public string readData()
         {
+            Console.WriteLine("please enter data-");
             return Console.ReadLine();
         }
     }
